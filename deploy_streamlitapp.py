@@ -218,6 +218,8 @@ def main():
         tffile = tempfile.NamedTemporaryFile(suffix= '.mp4', delete=False)
 
         if not video_file_buffer:
+            tffile.name = 0
+        else:
             tffile.write(video_file_buffer.read())
             demo_vid = open(tffile.name, 'rb')
             demo_bytes = demo_vid.read()
